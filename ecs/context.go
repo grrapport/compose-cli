@@ -363,7 +363,7 @@ func listAvailableRegions(opts *ContextParams) ([]string, error) {
 	// Setup SDK with credentials, will also validate those
 	session, err := session.NewSessionWithOptions(session.Options{
 		Config: aws.Config{
-			Credentials: credentials.NewStaticCredentials(opts.AccessKey, opts.SecretKey, ""),
+			Credentials: credentials.NewStaticCredentials(opts.AccessKey, opts.SecretKey, opts.SessionToken),
 			Region:      aws.String("us-east-1"),
 		},
 	})
